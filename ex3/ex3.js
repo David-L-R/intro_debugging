@@ -1,5 +1,5 @@
 const characters = require("../data/harry_potter/characters.json");
-
+const solution = require("../solutions/solution3");
 // Present all characters that
 // their ancestry is half-blood
 // and their gender is not male
@@ -18,5 +18,7 @@ const halfBloodNotMales = characters.filter((x) => {
   }
 });
 
-console.log(halfBloodNotMales);
-// console.log(halfBloodNotMales.length);
+console.log(
+  "Exercie passed: ",
+  JSON.stringify(halfBloodNotMales) === JSON.stringify(solution)
+);
