@@ -67,8 +67,9 @@ const createCards = (characters) => {
     if (character.house) {
       mainCardContainer.appendChild(logo);
     }
-    card.appendChild(buttonContainer);
-
+    if (characters.length !== 1) {
+      card.appendChild(buttonContainer);
+    }
     textContainer.appendChild(titleElement);
     textContainer.appendChild(speciesElement);
     textContainer.appendChild(genderElement);
