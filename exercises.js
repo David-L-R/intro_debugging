@@ -1,33 +1,28 @@
 const characters = require("./data/harry_potter/characters.json");
 
-// format the data to create a new array
-// in the new array, all object will be in this format:
-
+// filter all characters that are male, and present an object only with the name and house
 /*
-{
-    names: ["...", ...all alternative names],
-    type: [$species, $ancestry, $gender],
-    house: $house
-}
-*/
-
-// for example:
-
-/*
-{
-    names: ['Lily Potter', 'Lily Luna Potter' ],
-    type: ['human', 'half-blood', 'female'],
-    house: 'Gryffindor'
-}
+    {
+        name,
+        house,
+    }
 */
 
 const formattedCharacters = characters.map((character) => {
-  const { name, alternate_names, gender, species, ancestry, house } = character;
-  return {
-    names: [name, ...alternate_names],
-    type: [species, ancestry, gender],
-    house,
-  };
+  if (character.gender == "male") {
+    return {
+      name: character.name,
+      house: character.house,
+    };
+  }
 });
 
-console.log(formattedCharacters);
+// console.log(formattedCharacters);
+
+const obj = {};
+
+characters.forEach((c) => {
+  obj[c.species] = 1;
+});
+
+console.log(obj);

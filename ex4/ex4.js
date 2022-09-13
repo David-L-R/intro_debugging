@@ -1,5 +1,5 @@
 const characters = require("../data/harry_potter/characters.json");
-const solution = require("../solutions/ex4/solution4");
+const solution = require("../solutions/solution4");
 // format the data to create a new array
 // in the new array, all object will be in this format:
 
