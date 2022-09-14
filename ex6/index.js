@@ -18,7 +18,7 @@ const createCards = (characters) => {
     return;
   }
 
-  characters.forEach((character, index) => {
+  characters.forEach((character) => {
     const { name, image, house, species, gender } = character;
     const card = document.createElement("div");
     card.classList.add("card");
@@ -55,7 +55,7 @@ const createCards = (characters) => {
     const button = document.createElement("button");
     const buttonText = document.createTextNode("Choose");
     button.classList.add(`choose-button`);
-    button.setAttribute("id", `${index}`);
+    button.setAttribute("id", character.id);
     button.appendChild(buttonText);
     buttonContainer.appendChild(button);
 
@@ -84,19 +84,58 @@ createCards(characters);
 
 /* FROM HERE, ALL CODE BELOW CAN BE CHANGED AND REFACTORED */
 
+const charactersWithIds = characters.map((character, index) => {
+  return {
+    id: index,
+    ...character,
+  };
+});
+
 const chooseRandomButton = document.getElementById("choose-random");
 
 chooseRandomButton.addEventListener("click", () => {
-  const random = Math.floor(Math.random() * characters.length);
-  createCards([characters[random]]);
+  const random = Math.floor(Math.random() * charactersWithIds.length);
+  createCards([charactersWithIds[random]]);
 });
 
-const chooseButtons = Array.from(
-  document.getElementsByClassName("choose-button")
-);
+const addEventListenerToChooseButtons = () => {
+  const chooseButtons = Array.from(
+    document.getElementsByClassName("choose-button")
+  );
 
-chooseButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    createCards([characters[e.target.id]]);
+  chooseButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      console.log("clicked", e.target.id);
+      createCards([charactersWithIds[e.target.id]]);
+    });
   });
-});
+};
+
+addEventListenerToChooseButtons();
+
+const selects = document.getElementsByTagName("select");
+
+const resetButton = document.getElementById("reset-button");
+const reset = () => {
+  Array.from(selects).forEach((select) => {
+    select.value = "all";
+  });
+  createCards(charactersWithIds);
+};
+
+resetButton.addEventListener("click", reset);
+
+const filterButton = document.getElementById("filter-button");
+const filter = () => {
+  let filtered = [...charactersWithIds];
+  Array.from(selects).forEach((select) => {
+    if (select.value === "all") return true;
+    filtered = filtered.filter(
+      (character) => character[select.name].toLowerCase() === select.value
+    );
+  });
+  createCards(filtered);
+  addEventListenerToChooseButtons();
+};
+
+filterButton.addEventListener("click", filter);

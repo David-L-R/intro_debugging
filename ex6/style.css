@@ -15,6 +15,7 @@ html {
 
 body {
   display: grid;
+  grid-template-columns: 1fr 1fr 300px;
   grid-template-rows: 80px auto 80px;
   grid-template-areas:
     "nav nav nav"
@@ -26,7 +27,13 @@ body {
 
 button {
   padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
+}
+
+button:active {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 nav {
@@ -65,8 +72,7 @@ nav h2 {
   justify-content: center;
 }
 .card {
-  min-width: 250px;
-  width: 40%;
+  width: 300px;
 }
 
 .card img {
@@ -129,16 +135,16 @@ nav h2 {
 
 aside {
   grid-area: side;
-  min-width: 200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 20px 20px;
 }
 
 aside select {
-  width: 100%;
+  width: 75%;
   margin-bottom: 20px;
+  height: 2rem;
 }
 
 aside label {
@@ -157,9 +163,17 @@ aside div {
   color: white;
 }
 
+#filter-button:active {
+  background-color: lightgreen;
+}
+
 #reset-button {
   background-color: red;
   color: white;
+}
+
+#reset-button:active {
+  background-color: pink;
 }
 
 footer {
