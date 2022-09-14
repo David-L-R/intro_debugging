@@ -47,6 +47,59 @@ Once there is only one character left, either by choosing a random one or by fil
 
 ### Bug 1
 
+Random button only works once.
+
+The issues:
+
+- When pressing the second time, it chooses the same character.
+
 ### Bug 2
 
+Choose button (the button that is in every character card) should choose filter all other characters.
+
+The issues:
+
+- pressing on it only works for the first character (Harry potter)
+- does not work for any card
+
 ### Bug 3
+
+The issues:
+
+- Reset button does not change the select input back to "Select all".
+
+### Bug 4
+
+The reset button used to change the select inputs back to "Select all".
+But even when it did, we still have the issues.
+
+We expect these issues to come back once bug #3 is fixed.
+
+The issues:
+
+- Although reset button resets the input, not all characters are shown!
+
+### Bug 5 (Advanced)
+
+Filter functionality does not work. When any one of the inputs is on "Select all", it does not show anything.
+
+If all inputs are chosen (let's say: "Gryffindor", "female" and "human"), it only filters according to "human".
+
+For some reason it does not take into account all of the inputs...
+
+Desired behavior:
+If we chose
+
+- Gryffindor
+- Female
+- Human
+
+We should only see cards that are human females from the house Gryffindor.
+
+### Bug (Ninja)
+
+Only when bug #2 was fixed (pressing on "choose" button should filter only one character).
+
+Filtering characters using the dropdown and filter button make the choose button not to work! 🤯
+
+Desired behavior: after filtering, choose button should filter only one character.

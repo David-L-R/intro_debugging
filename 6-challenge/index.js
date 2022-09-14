@@ -86,49 +86,42 @@ createCards(characters);
 
 const chooseRandomButton = document.getElementById("choose-random");
 
+let random;
 chooseRandomButton.addEventListener("click", () => {
-  const random = Math.floor(Math.random() * characters.length);
+  if (!random) {
+    random = Math.floor(Math.random() * characters.length);
+  }
   createCards([characters[random]]);
 });
 
-const addEventListenerToChooseButtons = () => {
-  const chooseButtons = Array.from(
-    document.getElementsByClassName("choose-button")
-  );
+const chooseButtons = Array.from(
+  document.getElementsByClassName("choose-button")
+);
 
-  chooseButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      console.log("clicked", e.target.id);
-      createCards([characters[e.target.id]]);
-    });
-  });
-};
-
-addEventListenerToChooseButtons();
+chooseButtons[0].addEventListener("click", (e) => {
+  createCards([characters[e.target.id]]);
+});
 
 const selects = document.getElementsByTagName("select");
-
 const resetButton = document.getElementById("reset-button");
 const reset = () => {
-  Array.from(selects).forEach((select) => {
+  selects.forEach((select) => {
     select.value = "all";
   });
-  createCards(characters);
 };
 
 resetButton.addEventListener("click", reset);
 
 const filterButton = document.getElementById("filter-button");
+
 const filter = () => {
-  let filtered = [...characters];
+  let filtered = [];
   Array.from(selects).forEach((select) => {
-    if (select.value === "all") return true;
-    filtered = filtered.filter(
+    filtered = characters.filter(
       (character) => character[select.name].toLowerCase() === select.value
     );
   });
   createCards(filtered);
-  addEventListenerToChooseButtons();
 };
 
 filterButton.addEventListener("click", filter);
