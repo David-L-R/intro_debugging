@@ -18,7 +18,7 @@ const createCards = (characters) => {
     return;
   }
 
-  characters.forEach((character) => {
+  characters.forEach((character, index) => {
     const { name, image, house, species, gender } = character;
     const card = document.createElement("div");
     card.classList.add("card");
@@ -55,7 +55,7 @@ const createCards = (characters) => {
     const button = document.createElement("button");
     const buttonText = document.createTextNode("Choose");
     button.classList.add(`choose-button`);
-    button.setAttribute("id", character.id);
+    button.setAttribute("id", `${index}`);
     button.appendChild(buttonText);
     buttonContainer.appendChild(button);
 
@@ -84,18 +84,11 @@ createCards(characters);
 
 /* FROM HERE, ALL CODE BELOW CAN BE CHANGED AND REFACTORED */
 
-const charactersWithIds = characters.map((character, index) => {
-  return {
-    id: index,
-    ...character,
-  };
-});
-
 const chooseRandomButton = document.getElementById("choose-random");
 
 chooseRandomButton.addEventListener("click", () => {
-  const random = Math.floor(Math.random() * charactersWithIds.length);
-  createCards([charactersWithIds[random]]);
+  const random = Math.floor(Math.random() * characters.length);
+  createCards([characters[random]]);
 });
 
 const addEventListenerToChooseButtons = () => {
@@ -106,7 +99,7 @@ const addEventListenerToChooseButtons = () => {
   chooseButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       console.log("clicked", e.target.id);
-      createCards([charactersWithIds[e.target.id]]);
+      createCards([characters[e.target.id]]);
     });
   });
 };
@@ -120,14 +113,14 @@ const reset = () => {
   Array.from(selects).forEach((select) => {
     select.value = "all";
   });
-  createCards(charactersWithIds);
+  createCards(characters);
 };
 
 resetButton.addEventListener("click", reset);
 
 const filterButton = document.getElementById("filter-button");
 const filter = () => {
-  let filtered = [...charactersWithIds];
+  let filtered = [...characters];
   Array.from(selects).forEach((select) => {
     if (select.value === "all") return true;
     filtered = filtered.filter(

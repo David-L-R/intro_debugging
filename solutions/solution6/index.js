@@ -1,4 +1,4 @@
-import characters from "../data/harry_potter/characters.json" assert { type: "json" };
+import characters from "../../data/harry_potter/characters.json" assert { type: "json" };
 
 const characterContainer = document.getElementById("main");
 
@@ -18,7 +18,7 @@ const createCards = (characters) => {
     return;
   }
 
-  characters.forEach((character, index) => {
+  characters.forEach((character) => {
     const { name, image, house, species, gender } = character;
     const card = document.createElement("div");
     card.classList.add("card");
@@ -55,7 +55,7 @@ const createCards = (characters) => {
     const button = document.createElement("button");
     const buttonText = document.createTextNode("Choose");
     button.classList.add(`choose-button`);
-    button.setAttribute("id", `${index}`);
+    button.setAttribute("id", character.id);
     button.appendChild(buttonText);
     buttonContainer.appendChild(button);
 
