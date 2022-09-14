@@ -29,6 +29,6 @@ const formattedCharacters = characters.map((character) => {
 });
 
 console.log(
-  "Exercie passed: ",
+  "Exercie 5 passed: ",
   JSON.stringify(formattedCharacters) === JSON.stringify(solution)
 );

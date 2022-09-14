@@ -7,6 +7,6 @@ const gryffindors = characters.filter((x) => {
 });
 
 console.log(
-  "Exercie passed: ",
+  "Exercie 2 passed: ",
   JSON.stringify(gryffindors) === JSON.stringify(solution)
 );

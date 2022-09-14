@@ -19,6 +19,6 @@ const halfBloodNotMales = characters.filter((x) => {
 });
 
 console.log(
-  "Exercie passed: ",
+  "Exercie 3 passed: ",
   JSON.stringify(halfBloodNotMales) === JSON.stringify(solution)
 );
