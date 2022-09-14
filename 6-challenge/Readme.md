@@ -96,7 +96,7 @@ If we chose
 
 We should only see cards that are human females from the house Gryffindor.
 
-### Bug (Ninja)
+### Bug 6 (Ninja)
 
 Only when bug #2 was fixed (pressing on "choose" button should filter only one character).
 
