@@ -79,6 +79,8 @@ The issues:
 
 - Although reset button resets the input, not all characters are shown!
 
+To test this, press on a random character, and then reset. You will see that the random character is still there instead of the entire list.
+
 ### Bug 5 (Advanced)
 
 Filter functionality does not work. When any one of the inputs is on "Select all", it does not show anything.
