@@ -105,3 +105,9 @@ Only when bug #2 was fixed (pressing on "choose" button should filter only one c
 Filtering characters using the dropdown and filter button make the choose button not to work! 🤯
 
 Desired behavior: after filtering, choose button should filter only one character.
+
+### Feature
+
+Pressing on tags will filter according to the tag.
+
+So pressing on tag "Male" will filter only males :)
