@@ -10,16 +10,6 @@ You will understand:
 - The importance of clean code
 - How to refactor code
 
-# Lesson Agenda
-
-- 15 minutes intro
-- 15 minutes to solve exercise
-- 10 minutes we solve it together
-- 5 minutes break
-- 5 minutes explanation on exercise 6
-- 25 minutes to solve exercise 6
-- 20 minute we solve it together
-
 # Installation
 
 ```bash
