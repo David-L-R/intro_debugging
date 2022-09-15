@@ -1,5 +1,5 @@
 const characters = require("../data/harry_potter/characters.json");
-const solution = require("../solutions/solution5");
+const solution = require("../solutions/clean-code-challenge/solution5");
 
 // filter all characters that are
 // 1. male

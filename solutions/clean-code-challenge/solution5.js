@@ -1,4 +1,4 @@
-const characters = require("../data/harry_potter/characters.json");
+const characters = require("../../data/harry_potter/characters.json");
 
 module.exports = characters
   .filter(

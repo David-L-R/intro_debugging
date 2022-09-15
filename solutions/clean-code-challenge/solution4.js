@@ -1,4 +1,4 @@
-const characters = require("../data/harry_potter/characters.json");
+const characters = require("../../data/harry_potter/characters.json");
 
 const formattedCharacters = characters.map((character) => {
   const { name, alternate_names, gender, species, ancestry, house } = character;

@@ -1,5 +1,5 @@
 const characters = require("../data/harry_potter/characters.json");
-const solution = require("../solutions/solution3");
+const solution = require("../solutions/clean-code-challenge/solution3");
 // Present all characters that
 // their ancestry is half-blood
 // and their gender is not male
