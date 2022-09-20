@@ -86,11 +86,8 @@ createCards(characters);
 
 const chooseRandomButton = document.getElementById("choose-random");
 
-let random;
 chooseRandomButton.addEventListener("click", () => {
-  if (!random) {
-    random = Math.floor(Math.random() * characters.length);
-  }
+  const random = Math.floor(Math.random() * characters.length);
   createCards([characters[random]]);
 });
 
@@ -98,14 +95,16 @@ const chooseButtons = Array.from(
   document.getElementsByClassName("choose-button")
 );
 
-chooseButtons[0].addEventListener("click", (e) => {
-  createCards([characters[e.target.id]]);
+chooseButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    createCards([characters[e.target.id]]);
+  });
 });
 
 const selects = document.getElementsByTagName("select");
 const resetButton = document.getElementById("reset-button");
 const reset = () => {
-  selects.forEach((select) => {
+  Array.from(selects).forEach((select) => {
     select.value = "all";
   });
 };
