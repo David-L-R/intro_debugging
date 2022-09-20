@@ -57,12 +57,14 @@ The issues:
 
 ### Bug 2
 
-Choose button (the button that is in every character card) should choose filter all other characters.
+Choose button (the button that is in every character's card) should filter all other characters.
+
+In other words, when you press on "choose", you should only see one character. The one you pressed on.
 
 The issues:
 
 - pressing on it only works for the first character (Harry potter)
-- does not work for any card
+- does not work for any other card
 
 <img width="316" alt="choose button" src="https://user-images.githubusercontent.com/31222514/190202274-6d4f230c-f791-4abc-83b6-55401b0d856a.png">
 
@@ -70,22 +72,20 @@ The issues:
 
 The issues:
 
-- Reset button does not change the select input back to "Select all".
+- Reset button does not change the select inputs back to "Select all".
 
 <img width="331" alt="reset button" src="https://user-images.githubusercontent.com/31222514/190202312-c91d51bf-55ad-418f-99ea-54b6e089f3cf.png">
 
 ### Bug 4
 
-The reset button used to change the select inputs back to "Select all".
-But even when it did, we still have the issues.
+The reset button does not show the entire characters list.
 
-We expect these issues to come back once bug #3 is fixed.
+To reproduce this issue:
 
-The issues:
+1. press on a random character
+2. then press on reset button.
 
-- Although reset button resets the input, not all characters are shown!
-
-To test this, press on a random character, and then reset. You will see that the random character is still there instead of the entire list.
+You will see that the random character is still there instead of the entire list.
 
 <img width="974" alt="reset list" src="https://user-images.githubusercontent.com/31222514/190202384-544fc0bc-610c-4a1b-a058-32906569adb1.png">
 
@@ -106,15 +106,29 @@ If we chose
 
 We should only see cards that are human females from the house Gryffindor.
 
+If we choose
+
+- select all
+- select all
+- select all
+
+We should see all characters.
+
 <img width="948" alt="filter all" src="https://user-images.githubusercontent.com/31222514/190202554-274e4848-3cfb-46d5-9d3b-9d2551ffdc7f.png">
 
 ### Bug 6 (Ninja)
 
-Only when bug #2 was fixed (pressing on "choose" button should filter only one character).
+**How to reproduce bug**:
 
-Filtering characters using the dropdown and filter button make the choose button not to work! 🤯
+- Filter characters using the inputs and filter button
+- from the filtered list, choose one character by pressing the "choose" button in the card 🤯
 
-Desired behavior: after filtering, choose button should filter only one character.
+The button does not work anymore!
+
+Desired behavior:
+
+- after filtering
+- pressing on the choose button should filter only one character
 
 ## Features
 
@@ -124,15 +138,15 @@ Pressing on tags will filter according to the tag.
 
 So pressing on tag "Male" will filter only males :)
 
-### 2 - search input
+### 2 - search input (part 1)
 
 Search input will allow user to find by name
 
-### 3 - search input 2.0
+### 3 - search input (part 2)
 
 If we filtered the list, the search will find only from filtered list
 
-### 4 - search input 3.0
+### 4 - search input (part 3)
 
 Can find multiple fields (name, house, gender...)
 
