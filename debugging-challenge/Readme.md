@@ -130,6 +130,10 @@ Desired behavior:
 - after filtering
 - pressing on the choose button should filter only one character
 
+### Bug 7 (Ninja)
+
+After filter and choose buttons work, choosing a character after filtering chooses the wrong character!
+
 ## Features
 
 ### 1 - Advanced filter
