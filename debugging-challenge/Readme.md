@@ -91,6 +91,10 @@ You will see that the random character is still there instead of the entire list
 
 ### Bug 5 (Advanced)
 
+After resetting, when the entire list is back, the "choose" buttons in the cards don't work!
+
+### Bug 6 (Advanced)
+
 Filter functionality does not work. When any one of the inputs is on "Select all", it does not show anything.
 
 If all inputs are chosen (let's say: "Gryffindor", "female" and "human"), it only filters according to "human".
@@ -116,7 +120,7 @@ We should see all characters.
 
 <img width="948" alt="filter all" src="https://user-images.githubusercontent.com/31222514/190202554-274e4848-3cfb-46d5-9d3b-9d2551ffdc7f.png">
 
-### Bug 6 (Ninja)
+### Bug 7 (Ninja)
 
 **How to reproduce bug**:
 
@@ -130,7 +134,7 @@ Desired behavior:
 - after filtering
 - pressing on the choose button should filter only one character
 
-### Bug 7 (Ninja)
+### Bug 8 (Ninja)
 
 After filter and choose buttons work, choosing a character after filtering chooses the wrong character!
 
