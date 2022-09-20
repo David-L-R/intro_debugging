@@ -1,12 +1,20 @@
 {
   "name": "intro_debugging",
   "version": "1.0.0",
-  "description": "",
+  "description": "**TIP:** to see this file with styling, press on the right mouse button and \"open preview\".",
   "main": "index.js",
   "scripts": {
     "test": "node ./clean-code-challenges/ex1 && node ./clean-code-challenges/ex2 && node ./clean-code-challenges/ex3 && node ./clean-code-challenges/ex4 && node ./clean-code-challenges/ex5"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-L-R/intro_debugging.git"
+  },
+  "bugs": {
+    "url": "https://github.com/David-L-R/intro_debugging/issues"
+  },
+  "homepage": "https://github.com/David-L-R/intro_debugging#readme"
 }

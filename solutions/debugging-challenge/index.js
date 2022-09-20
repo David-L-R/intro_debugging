@@ -107,6 +107,7 @@ const addEventListenerToChooseButtons = () => {
     button.addEventListener("click", (e) => {
       console.log("clicked", e.target.id);
       createCards([charactersWithIds[e.target.id]]);
+      // changed, and bug is solved! 🎉🎉🎉🎉🎉
     });
   });
 };
