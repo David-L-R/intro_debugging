@@ -94,6 +94,7 @@ const charactersWithIds = characters.map((character, index) => {
 const chooseRandomButton = document.getElementById("choose-random");
 
 chooseRandomButton.addEventListener("click", () => {
+  console.log("choose random button clicked");
   const random = Math.floor(Math.random() * charactersWithIds.length);
   createCards([charactersWithIds[random]]);
 });

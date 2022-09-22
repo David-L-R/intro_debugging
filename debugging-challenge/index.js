@@ -3,6 +3,19 @@ import characters from "../data/harry_potter/characters.json" assert { type: "js
 const characterContainer = document.getElementById("main");
 
 /* NO NEED TO CHANGE  */
+
+const addEventListenerToSelectButtons = () => {
+  const chooseButtons = Array.from(
+    document.getElementsByClassName("choose-button")
+  );
+
+  chooseButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      createCards([characters[e.target.id]]);
+    });
+  });
+};
+
 const cleanCardContainer = () => {
   characterContainer.innerHTML = "";
 };
@@ -76,6 +89,7 @@ const createCards = (characters) => {
 
     characterContainer.appendChild(card);
   });
+  addEventListenerToSelectButtons();
 };
 
 createCards(characters);
@@ -86,28 +100,18 @@ createCards(characters);
 
 const chooseRandomButton = document.getElementById("choose-random");
 
-let random;
 chooseRandomButton.addEventListener("click", () => {
-  if (!random) {
-    random = Math.floor(Math.random() * characters.length);
-  }
-  createCards([characters[random]]);
-});
-
-const chooseButtons = Array.from(
-  document.getElementsByClassName("choose-button")
-);
-
-chooseButtons[0].addEventListener("click", (e) => {
-  createCards([characters[e.target.id]]);
+  const randomIndex = Math.floor(Math.random() * characters.length);
+  createCards([characters[randomIndex]]);
 });
 
 const selects = document.getElementsByTagName("select");
 const resetButton = document.getElementById("reset-button");
 const reset = () => {
-  selects.forEach((select) => {
+  Array.from(selects).forEach((select) => {
     select.value = "all";
   });
+  createCards(characters);
 };
 
 resetButton.addEventListener("click", reset);
@@ -115,10 +119,12 @@ resetButton.addEventListener("click", reset);
 const filterButton = document.getElementById("filter-button");
 
 const filter = () => {
-  let filtered = [];
+  let filtered = [...characters];
   Array.from(selects).forEach((select) => {
-    filtered = characters.filter(
-      (character) => character[select.name].toLowerCase() === select.value
+    filtered = filtered.filter(
+      (character) =>
+        select.value === "all" ||
+        character[select.name].toLowerCase() === select.value
     );
   });
   createCards(filtered);
